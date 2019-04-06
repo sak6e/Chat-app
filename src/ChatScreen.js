@@ -2,6 +2,7 @@ import React from 'react'
 import Chatkit from '@pusher/chatkit-client'
 import MessageList from './components/MessageList'
 import SendMessageForm from './components/SendMessageForm'
+import WhosOnlineList from './components/WhosOnlineList'
 
 class ChatScreen extends React.Component{
     constructor(props){
@@ -41,6 +42,7 @@ class ChatScreen extends React.Component{
                                 messages: [...this.state.messages, message],
                             })
                         },
+                        onPresenceChange: () => this.forceUpdate(),
                     },
                 })
             })
@@ -79,7 +81,10 @@ class ChatScreen extends React.Component{
             <div style={styles.container}>
                 <div style={styles.chatContainer}>
                     <aside style={styles.whosOnlineListContainer}>
-                        <h2>Who's online PLACEHOLDER</h2>
+                        <WhosOnlineList
+                            currentUser={this.state.currentUser}
+                            users={this.state.currentRoom.users}
+                        />
                     </aside>
                     <section style={styles.chatListContainer}>
                         <MessageList messages={this.state.messages} style={styles.chatList} />
