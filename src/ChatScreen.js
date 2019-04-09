@@ -10,7 +10,7 @@ class ChatScreen extends React.Component{
         this.state={
             currentUser: {},
             currentRoom: {},
-            messages: [],
+            messages: ["okkk"],
         }
         this.sendMessage=this.sendMessage.bind(this)
     }

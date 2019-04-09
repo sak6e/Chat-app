@@ -1,7 +1,13 @@
 import React from 'react'
+import {List} from 'react-virtualized'
 
 class MessageList extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
     render(){
+
         const styles={
             container:{
                 overflowY: 'scroll',
@@ -21,13 +27,17 @@ class MessageList extends React.Component{
                 fontSize: 15,
             }
         }
+        console.log("IG");
+        console.log(this.props.messages);
+
         return(
-            <div
+            <div id="inagupta"
                 style={{
                     ...this.props.style,
                     ...styles.container,
                 }}
             >
+
                 <ul style={styles.ul}>
                     {this.props.messages.map((message,index)=>(
                         <li key={index} style={styles.li}>
@@ -38,6 +48,7 @@ class MessageList extends React.Component{
                         </li>
                     ))}
                 </ul>
+
             </div>
         )
     }
