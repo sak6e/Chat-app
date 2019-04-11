@@ -1,4 +1,12 @@
 import React from 'react'
+import{
+    Button,
+    Form,
+    Grid,
+    Header,
+    Message,
+    Segment,
+} from 'semantic-ui-react';
  class UsernameForm extends React.Component{
     constructor(props){
         super(props)
@@ -19,15 +27,29 @@ import React from 'react'
     }
     render(){
         return(
-            <div>
-                <div>
-                    <h2>What is your username?</h2>
-                    <form onSubmit={this.onSubmit}>
-                        <input type="text" onChange={this.onChange} />
-                        <input type="submit" />
-                    </form>
-                </div>
-            </div>
+
+        <Grid centered columns={2}>
+            <Grid.Column>
+                <Header as="h2" textAlign="center">
+                    Enter your username
+                </Header>
+                <Segment>
+                    <Form size="large" onSubmit={this.onSubmit} >
+                        <Form.Input
+                            fluid
+                            icon="user"
+                            iconPosition="left"
+                            placeholder="Username"
+                            onChange={this.onChange}
+                        />
+
+                        <Button color="blue" fluid size="large">
+                            Submit
+                        </Button>
+                    </Form>
+                </Segment>
+            </Grid.Column>
+        </Grid>
         )
     }
  }

@@ -4,6 +4,22 @@ import {List} from 'react-virtualized'
 class MessageList extends React.Component{
     constructor(props){
         super(props)
+        this.renderRow=this.renderRow.bind(this)
+    }
+
+    renderRow=({index,key,style}) => {
+
+            <div key={key} style={style} className="row">
+                <div className="user">
+                    {this.props.messages}
+                    "some_user"
+                </div>
+                <div className="msg">
+
+                    "Hi there"
+                </div>
+            </div>
+
     }
 
     render(){
@@ -37,6 +53,7 @@ class MessageList extends React.Component{
                     ...styles.container,
                 }}
             >
+
 
                 <ul style={styles.ul}>
                     {this.props.messages.map((message,index)=>(

@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import UsernameForm from './components/UsernameForm'
 import ChatScreen from './ChatScreen'
+import {Container} from 'semantic-ui-react'
+import Login from './Login'
 
-class App extends Component {
+export default class App extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -28,13 +30,14 @@ class App extends Component {
         .catch(error => console.error('error', error))
   }
   render() {
-    if(this.state.currentScreen==='WhatIsYourUsernameScreen'){
-      return <UsernameForm onSubmit={this.onUsernameSubmitted} />
+    if(this.state.currentScreen==='WhatIsYourUsernameScreen') {
+      return (
+          <UsernameForm onSubmit={this.onUsernameSubmitted} />
+      )
     }
+
     if(this.state.currentScreen==='ChatScreen'){
       return <ChatScreen currentUsername={this.state.currentUsername} />
     }
   }
 }
-
-export default App
