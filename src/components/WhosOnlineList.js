@@ -2,8 +2,13 @@ import React from 'react'
 
 class WhosOnlineList extends React.Component{
     renderUsers(){
+        const styles={
+            ul:{
+                backgroundColor: '#2d4b56',
+            }
+        }
         return(
-            <ul>
+            <ul style={styles.ul}>
                 {this.props.users.map((user, index) =>{
                     if(user.id === this.props.currentUser.id){
                         return(
@@ -39,6 +44,7 @@ class WhosOnlineListItem extends React.Component{
                 marginBottom: 5,
                 paddingTop: 2,
                 paddingBottom: 2,
+                height: '100%',
             },
             div:{
                 borderRadius: '50%',
@@ -53,7 +59,7 @@ class WhosOnlineListItem extends React.Component{
                 style={{
                     ...styles.div,
                     backgroundColor:
-                    this.props.presenceState === 'online' ? '#539eff' : '#414756',
+                    this.props.presenceState === 'online' ? '#539eff' : '#7d8493',
                 }}>
 
                 </div>

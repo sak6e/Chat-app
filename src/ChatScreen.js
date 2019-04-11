@@ -67,7 +67,7 @@ class ChatScreen extends React.Component{
                 width: '300px',
                 flex: 'none',
                 padding: 20,
-                backgroundColor: '#2c303b',
+                backgroundColor: '#2d4b56',
                 color: 'white'
             },
             chatListContainer:{
