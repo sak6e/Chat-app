@@ -6,3 +6,4 @@ Steps to run the app on your machine:
   5. Head to http://localhost:3000/
 
 ![alt text](https://raw.githubusercontent.com/sak6e/react-test-1/master/Screenshot%20from%202019-05-05%2022-23-20.png)
+![alt text](https://raw.githubusercontent.com/sak6e/react-test-1/master/Screenshot%20from%202019-05-05%2022-24-40.png)
